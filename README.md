@@ -1,4 +1,4 @@
-# Airflow Project:
+# Stock Market Project:
 This project utilized Airflow to manage DAG (Directed Acyclic Graph, a modelling technique to demonstrate sequential process without loop) to crawl and transform data from [Yahoo Stock Market](https://query1.finance.yahoo.com/v8/finance/chart/amzn)(Amazon For Example).
 Using collected data, I will transform it to datasets that are usable in visualization tools like Power BI.
 ## 1. Overview:

@@ -33,4 +33,4 @@ Postgres:
 Slack:
   - Connection Id: slack
   - Connection Type: Slack API
-  - Slack API Token: #replace with your generated token
+  - Slack API Token:  #replace with your generated token

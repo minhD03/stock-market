@@ -35,7 +35,7 @@ These are the steps processed in the workflow:
 ├── dag/
 │   └── stock_market.py         # manage the dag flow.
 ├── include/
-│   └── scripts/                # set up minio and perform tasks
+    └── scripts/                # set up minio and perform tasks
 
 ```
 ## 4. User Guide:

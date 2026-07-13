@@ -34,7 +34,7 @@ These are the steps processed in the workflow:
 ├── connection_strings (Users are required to input this in Airflow Connection Manager)
 ├── dag/
 │   └── stock_market.py         # manage the dag flow.
-├── include/
+└── include/
     └── scripts/                # set up minio and perform tasks
 
 ```

@@ -32,7 +32,7 @@ These are the steps processed in the workflow:
 ├── docker-compose.yaml
 ├── init_airflow_role.sql       # initialize airflow role
 ├── connection_strings (Users are required to input this in Airflow Connection Manager)
-├── dag/
+├── dags/
 │   └── stock_market.py         # manage the dag flow.
 └── include/
     └── scripts/                # set up minio and perform tasks

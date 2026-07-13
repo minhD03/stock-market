@@ -1,10 +1,20 @@
 # Stock Market Project:
+
+
+## Table of Contents
+
+- [1) Introduction](#1-introduction)
+- [2) Architecture](#2-architecture)
+- [3) Code Structure](#3-code-structure)
+- [4) User Guide](#4-user-guide)
+  
+## 1. Introduction:
+![alt text](https://github.com/minhD03/stock-market/blob/6b27908dd56cb02b73b6ff1c8d70f25c1526b4bf/images/Diagram%201.png)
 This project utilized Airflow to manage DAG (Directed Acyclic Graph, a modelling technique to demonstrate sequential process without loop) to crawl and transform data from [Yahoo Stock Market](https://query1.finance.yahoo.com/v8/finance/chart/amzn)(Amazon For Example).
 Using collected data, I will transform it to datasets that are usable in visualization tools like Power BI.
-## 1. Overview:
-![alt text](https://github.com/minhD03/stock-market/blob/6b27908dd56cb02b73b6ff1c8d70f25c1526b4bf/images/Diagram%201.png)
+
 The project is initialized inside a Docker container with Apache Airflow to ingest and process data before saving it to data warehouse in PostgreSQL. Inside Airflow, Minio is considered as Data Lake to contain Raw and processed data. Meanwhile, Spark is used as an external tool to process data. For notification, I use Slack as a free and simple method to receive message from Airflow for process minitoring.
-## 2. Core functions:
+## 2. Architecture:
 ![alt text](https://github.com/minhD03/stock-market/blob/c8f161fa3f4586e095c681ff317d2670da0115d5/images/Diagram%202.png)
 These are the steps processed in the workflow:
 
@@ -15,8 +25,20 @@ These are the steps processed in the workflow:
 +) From there Spark App will transform the data by creating csv file with timestamp, close, high, low, open and volume.
 
 +) With the formatted Dataset, it then will be saved into PostgreSQL server for later use.
+## 3. Code Structure:
 
-## 3. User Guide:
+```
+.
+├── docker-compose.yaml
+├── init_airflow_role.sql       # initialize airflow role
+├── connection_strings (Users are required to input this in Airflow Connection Manager)
+├── dag/
+│   └── stock_market.py         # manage the dag flow.
+├── include/
+│   └── scripts/                # set up minio and perform tasks
+
+```
+## 4. User Guide:
 ### a. Tool required:
 Docker is needed to install before running the container. Furthermore, Python with separated environment is recommended to avoid conflict. For notification, The Slack API Token is obtained from your Slack Account.
 
